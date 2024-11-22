@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Ignite Timer - README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição do Projeto
+O **Ignite Timer** é uma aplicação desenvolvida com React, utilizando Styled Components para estilização e gerenciamento de tema. O projeto implementa funcionalidades de temporizador, histórico de ciclos e gerenciamento de estado com `useReducer` e `context API`. A persistência de dados é realizada com `localStorage`, garantindo que as informações sejam mantidas entre sessões.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Styled Components**: Estilização de componentes com suporte a temas.
+- **React Hook Form**: Gerenciamento de formulários de forma simples e eficiente.
+- **Zod**: Validação e tipagem de dados.
+- **Immer**: Manipulação imutável de estados.
+- **Phosphor Icons**: Conjunto de ícones para aplicações web.
+- **Date-fns**: Manipulação de datas.
+- **React Router**: Gerenciamento de rotas.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Funcionalidades
+1. **Temporizador**
+   - Criação de ciclos de tarefas com tempo pré-definido.
+   - Pausa e interrupção do ciclo.
+   - Contagem regressiva com exibição dinâmica no título da aba do navegador.
 
-- Configure the top-level `parserOptions` property like this:
+2. **Histórico**
+   - Registro de tarefas realizadas, interrompidas ou em andamento.
+   - Cálculo de tempo decorrido desde o início de cada ciclo.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+3. **Gerenciamento de Estado**
+   - Uso de `useReducer` e `context API` para armazenar ciclos e estado ativo.
+   - Persistência de dados no `localStorage`.
+
+4. **Validação de Dados**
+   - Validação de campos do formulário com regras pré-definidas.
+
+---
+
+## Pré-requisitos
+- Node.js versão 16 ou superior
+- Gerenciador de pacotes (npm ou yarn)
+
+---
+
+## Como Executar o Projeto
+
+### 1. Clonar o Repositório
+```bash
+git clone https://github.com/WigorCosta21/ignite-timer.git
+cd ignite-timer
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2. Instalar Dependências
+```bash
+npm install
+# ou
+yarn install
 ```
+
+### 3. Iniciar a Aplicação
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+A aplicação estará disponível em: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## Personalização do Tema
+O arquivo `styles/themes/default.ts` contém as configurações de cores da aplicação. É possível adicionar novos temas ou alterar o tema existente.
+
+---
